@@ -1,32 +1,25 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class testcase1 {
+public class testcase4 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		
 		System.setProperty("webdriver.chrome.driver","C:\\Swetha\\work\\chromedriver_win32\\chromedriver.exe");
 		//create driver object
 		WebDriver driver =new ChromeDriver();
 		
-		driver.get("https://google.com");
+		driver.get("https://facebook.com");
 		System.out.println(driver.getTitle());
 		
+		driver.findElement(By.id("email")).sendKeys("swethab_shashidhar@yahoo.co.in");
+		
 
+		driver.findElement(By.name("pass")).sendKeys("123456");
 		
-		System.out.println(driver.getCurrentUrl());
-		
-		//System.out.println(driver.getPageSource());
-		
-		driver.get("https://yahoo.com");
-		
-		driver.navigate().back();		
-		driver.navigate().forward();
-		
-		driver.close();
-		
-	//	driver.quit();
+		driver.findElement(By.linkText("Forgotten account?")).click();
 
 	}
 
